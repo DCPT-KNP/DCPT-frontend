@@ -1703,6 +1703,7 @@ __metadata:
     postcss-import: ^14.0.2
     prettier: ^2.5.1
     react: 17.0.2
+    react-circular-progressbar: ^2.0.4
     react-dom: 17.0.2
     swr: ^1.1.2
     tailwindcss: ^3.0.18
@@ -4209,6 +4210,15 @@ __metadata:
   version: 5.1.1
   resolution: "quick-lru@npm:5.1.1"
   checksum: a516faa25574be7947969883e6068dbe4aa19e8ef8e8e0fd96cddd6d36485e9106d85c0041a27153286b0770b381328f4072aa40d3b18a19f5f7d2b78b94b5ed
+  languageName: node
+  linkType: hard
+
+"react-circular-progressbar@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-circular-progressbar@npm:2.0.4"
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: c9b550e81027c2ebffe8eedc44570cf016731939df9bdb0647d24d5f6b6a97ea70347b73a0e5141ee123ef448bf0df9621c2d30f73d63f6b87f5e304e21035d5
   languageName: node
   linkType: hard
 
