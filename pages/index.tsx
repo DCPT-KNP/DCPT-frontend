@@ -6,7 +6,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <MissionCard />
-      <SkillCard color="red" title="UX Design" />
+      <SkillCard color="red" title="UX Design" name="ETC Skill" percentage={80} />
+      <SkillCard color="green" title="UX Design" name="ETC Skill" percentage={60} />
+      <SkillCard color="blue" title="UX Design" name="ETC Skill" percentage={40} />
+      <SkillCard color="red" title="UX Design" name="ETC Skill" percentage={20} />
     </div>
   );
 };
