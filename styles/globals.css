@@ -29,3 +29,7 @@ a {
   box-shadow: none;
   border: 1px solid #e9e9e9;
 }
+
+.CircularProgressbar-text {
+  font-weight: 500;
+}
