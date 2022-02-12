@@ -1,9 +1,9 @@
-import ColorBar from '../atoms/ColorBar';
-import SkillTitle from '../atoms/SkillTitle';
-import tw from 'twin.macro';
-import SkillName from '../atoms/SkillName';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import tw from 'twin.macro';
+import ColorBar from '../atoms/ColorBar';
+import SkillName from '../atoms/Skill/SkillName';
+import SkillTitle from '../atoms/Skill/SkillTitle';
 interface ISkillCardProps {
   color: string;
   title: string;

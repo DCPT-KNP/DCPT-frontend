@@ -1,9 +1,9 @@
 import tw from 'twin.macro';
-import MissionEmoji from '../atoms/MissionEmoji';
-import MissionTitle from '../atoms/MIssionTitle';
-import MissionDescription from '../atoms/MissionDescription';
 import ColorBar from '../atoms/ColorBar';
-import SkillTitle from '../atoms/SkillTitle';
+import MissionDescription from '../atoms/Mission/MissionDescription';
+import MissionEmoji from '../atoms/Mission/MissionEmoji';
+import MissionTitle from '../atoms/Mission/MIssionTitle';
+import SkillTitle from '../atoms/Skill/SkillTitle';
 
 const MissionCardWrapper = tw.div`card md:flex-col max-w-sm p-6`;
 const MissionTitleWrapper = tw.div`flex items-center md:text-left mb-2`;
