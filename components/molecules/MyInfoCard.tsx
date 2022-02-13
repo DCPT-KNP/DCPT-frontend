@@ -1,5 +1,5 @@
 import tw from 'twin.macro';
-import CommonTitle from '../atoms/\bCommonTitle';
+import CommonTitle from '../atoms/CommonTitle';
 import Avatar from '../atoms/Avatar';
 import Chip from '../atoms/Chip';
 
