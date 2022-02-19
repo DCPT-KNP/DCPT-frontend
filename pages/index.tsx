@@ -1,16 +1,17 @@
+import '@atlaskit/css-reset';
 import type { NextPage } from 'next';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
 import tw from 'twin.macro';
+import Btn from '../components/atoms/Buttons/Btn';
 import CommonTitle from '../components/atoms/CommonTitle';
 import CategoryItem from '../components/molecules/CategoryItem';
+import Map from '../components/molecules/Map';
 import MissionCard from '../components/molecules/MissionCard';
 import MyInfoCard from '../components/molecules/MyInfoCard';
 import SkillCard from '../components/molecules/SkillCard';
 import StatusCard from '../components/molecules/StatusCard';
 import TipsCard from '../components/molecules/TipsCard';
-import '@atlaskit/css-reset';
 
 type missionType = { id: string; content: string };
 type columnType = { id: string; title: string; missionIds: string[] };
@@ -173,6 +174,12 @@ const Home: NextPage = () => {
       />
       <CommonTitle title={'Add My Missions'} />
       <CommonTitle title={'Add My Memo'} />
+      <Map />
+      <Btn name={'비회원 시작'} styles={{ size: '1.4rem', border: '1px solid' }} />
+      <Btn
+        name={'로그인'}
+        styles={{ size: '1.4rem', color: '#ffffff', bgColor: '#000000' }}
+      />
     </div>
   );
 };
