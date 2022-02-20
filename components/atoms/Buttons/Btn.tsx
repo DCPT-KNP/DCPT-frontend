@@ -7,6 +7,7 @@ interface IStylesProps {
   padding?: string;
   border?: string;
   textAlign?: 'left' | 'center' | 'right';
+  margin?: string;
 }
 
 interface IButtonProps {
@@ -20,7 +21,8 @@ const ButtonStyles = ({
   color = '#000000',
   padding = '1.2rem 4rem',
   border = 'none',
-  textAlign = 'center'
+  textAlign = 'center',
+  margin
 }: IStylesProps) =>
   css({
     backgroundColor: `${bgColor}`,
@@ -28,7 +30,8 @@ const ButtonStyles = ({
     color: `${color}`,
     padding: `${padding}`,
     border: `${border}`,
-    textAlign: `${textAlign}`
+    textAlign: `${textAlign}`,
+    margin: `${margin}`
   });
 
 const Btn = ({ name, styles }: IButtonProps) => {
