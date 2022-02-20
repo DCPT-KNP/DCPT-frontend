@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import tw, { css } from 'twin.macro';
 
 interface IStylesProps {
@@ -10,7 +11,7 @@ interface IStylesProps {
   margin?: string;
 }
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
   styles: IStylesProps;
 }
@@ -22,7 +23,7 @@ const ButtonStyles = ({
   padding = '1.2rem 4rem',
   border = 'none',
   textAlign = 'center',
-  margin
+  margin = '0 0 0 0 '
 }: IStylesProps) =>
   css({
     backgroundColor: `${bgColor}`,
@@ -34,8 +35,12 @@ const ButtonStyles = ({
     margin: `${margin}`
   });
 
-const Btn = ({ name, styles }: IButtonProps) => {
-  return <button css={[tw`font-bold`, ButtonStyles(styles)]}>{name}</button>;
+const Btn = ({ name, styles, ...rest }: IButtonProps) => {
+  return (
+    <button css={[tw`font-bold`, ButtonStyles(styles)]} {...rest}>
+      {name}
+    </button>
+  );
 };
 
 export default Btn;

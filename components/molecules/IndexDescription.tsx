@@ -4,7 +4,7 @@ interface IIndexDescriptionProps {
   boldDescription: string;
   description: string;
 }
-const DescLayout = tw.div`mb-64 flex flex-col`;
+const DescLayout = tw.div`mb-10 flex flex-col`;
 const Desc = tw.span`text-lg`;
 const BoldDesc = tw(Desc)`font-bold`;
 const IndexDescription = ({ boldDescription, description }: IIndexDescriptionProps) => {
