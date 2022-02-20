@@ -4,7 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mingyu: colors.red
+        gray: {
+          100: '#FFFFFF',
+          200: '#FAFAFA',
+          300: '#F0F0F0',
+          400: '#BDBDBD',
+          500: '#999999',
+          600: '#666666',
+          700: '#1A1A1A'
+        }
       }
     }
   },

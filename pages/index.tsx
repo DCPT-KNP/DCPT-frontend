@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const MainLayout = tw.div`flex px-16 py-32`;
 const RightSection = tw.section`flex flex-col flex-grow`;
-const BtnLayout = tw.div`flex items-center h-full`;
+const BtnLayout = tw.div`flex items-center h-full `;
 const IndexPage = () => {
   return (
     <MainLayout>
