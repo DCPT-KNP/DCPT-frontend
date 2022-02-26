@@ -29,13 +29,40 @@ export default class MyDocument extends Document<MyDocumentProps> {
             dangerouslySetInnerHTML={{ __html: this.props.css }}
           />
           <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
+            rel="preload"
+            href="/fonts/Inter/Inter-Bold.ttf"
+            as="font"
+            crossOrigin=""
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/Inter/Inter-Medium.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Inter/Inter-SemiBold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Pretendard/Pretendard-Black.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Pretendard/Pretendard-Bold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Pretendard/Pretendard-Medium.ttf"
+            as="font"
+            crossOrigin=""
           />
         </Head>
         <body>

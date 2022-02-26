@@ -2,6 +2,97 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard/Pretendard-Black.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard/Pretendard-Bold.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard/Pretendard-Black.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Bold.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-SemiBold.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Medium.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+
+  .headline {
+    @apply font-sans text-headline;
+  }
+  .subHeadline {
+    @apply font-inter text-subHeadline;
+  }
+  .title1 {
+    @apply font-sans text-title1;
+  }
+  .title2 {
+    @apply font-inter text-title2;
+  }
+  .title3 {
+    @apply font-inter text-title3;
+  }
+  .subTitle1 {
+    @apply font-sans text-subTitle1;
+  }
+  .subTitle2 {
+    @apply font-inter text-subTitle2;
+  }
+  .body1 {
+    @apply font-sans text-body1;
+  }
+  .body2 {
+    @apply font-sans text-body2;
+  }
+  .body3 {
+    @apply font-sans text-body3;
+  }
+  .caption {
+    @apply font-inter text-caption;
+  }
+  .label1 {
+    @apply font-inter text-label1;
+  }
+  .label2 {
+    @apply font-inter text-label2;
+  }
+  /* ... */
+}
+
 html,
 body {
   padding: 0;

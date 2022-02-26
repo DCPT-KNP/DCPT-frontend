@@ -13,6 +13,25 @@ module.exports = {
           600: '#666666',
           700: '#1A1A1A'
         }
+      },
+      fontFamily: {
+        sans: ['Pretendard', 'sans-serif'],
+        inter: ['Inter', 'sans-serif']
+      },
+      fontSize: {
+        headline: ['56px', '67px'],
+        subHeadline: ['40px', '48px'],
+        title1: ['24px', '32px'],
+        title2: ['20px', '24px'],
+        title3: ['16px', '20px'],
+        subTitle1: ['16px', '22px'],
+        subTitle2: ['14px', '17px'],
+        body1: ['20px', '29px'],
+        body2: ['14px', '20px'],
+        body3: ['12px', '18px'],
+        caption: ['11px', '14px'],
+        label1: ['40px', '48px'],
+        label2: ['20px', '24px']
       }
     }
   },
