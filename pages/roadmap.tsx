@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import tw from 'twin.macro';
-import Btn from '../components/atoms/Buttons/Btn';
+import Btn from '../components/Btn';
 import PageTitle from '../components/atoms/IndexPage/PageTitle';
 import MainLayout from '../components/layout/MainLayout';
 import LoadmapCard from '../components/roadmap/RoadmapCard';

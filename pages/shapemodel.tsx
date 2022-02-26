@@ -1,7 +1,7 @@
 import { SyntheticEvent } from 'react';
 import { useState } from 'react';
 import tw from 'twin.macro';
-import Btn from '../components/atoms/Buttons/Btn';
+import Btn from '../components/Btn';
 import PageTitle from '../components/atoms/IndexPage/PageTitle';
 import ImageBox from '../components/common/ImageBox';
 import MainLayout from '../components/layout/MainLayout';
