@@ -2,13 +2,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import Btn from '../components/atoms/Buttons/Btn';
-import IndexPageTitle from '../components/atoms/IndexPage/IndexTitle';
+import PageTitle from '../components/atoms/IndexPage/PageTitle';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
 import graphicImage from '../public/img/Graphic.png';
 
-const RightSection = tw.section`flex flex-col flex-grow`;
-const BtnLayout = tw.div`flex items-center h-full `;
+const RightSection = tw.section`flex flex-col pr-16`;
+const BtnLayout = tw.div`flex items-end h-full`;
+
 const IndexPage = () => {
   const router = useRouter();
   const handleClickGoToRoadmap = () => {
@@ -17,7 +18,7 @@ const IndexPage = () => {
   return (
     <MainLayout>
       <RightSection>
-        <IndexPageTitle title="Set your IT Design <br/> Career Roadmap" />
+        <PageTitle firstDesc="Set your IT Design" secondDesc="Career Roadmap" />
         <IndexDesc />
         <BtnLayout>
           <Btn
