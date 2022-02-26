@@ -8,7 +8,7 @@ interface IIndexPageTitleProps {
 // const Title = tw.h1`text-[#1A1A1A] text-[56px] font-bold whitespace-pre-line mb-14`;
 
 const Title = tw(Headline)`
-  text-[#1A1A1A]  whitespace-pre-line mb-14
+  text-black  whitespace-pre-line mb-14
 `;
 
 const IndexPageTitle = ({ title }: IIndexPageTitleProps) => {

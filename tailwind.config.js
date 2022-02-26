@@ -12,7 +12,14 @@ module.exports = {
           500: '#999999',
           600: '#666666',
           700: '#1A1A1A'
-        }
+        },
+        pink: '#FA73FD',
+        red: '#F63E2B',
+        yellow: '#F5B72B',
+        green: '#60CE93',
+        blue: '#4573F3',
+        violet: '#8D82F3',
+        black: '#1A1A1A'
       },
       fontFamily: {
         sans: ['Pretendard', 'sans-serif'],
