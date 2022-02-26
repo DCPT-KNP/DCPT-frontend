@@ -1,4 +1,4 @@
-export interface ICard {
+export interface IRoadMapCard {
   src: StaticImageData;
   alt: string;
   title: string;
