@@ -9,9 +9,13 @@ import ShapeModelCard from '../components/shapemodel/ShapeModelCard';
 import ShapeModelDesc from '../components/shapemodel/ShapeModelDesc';
 import { IShapeModelCard } from '../interface/shapemodel';
 import Choose from '../public/img/choose.png';
+import I from '../public/img/i.png';
+import T from '../public/img/t.png';
+import Pi from '../public/img/pi.png';
 import IShape from '../public/img/i_shape.png';
 import PIShape from '../public/img/pi_shape.png';
 import TShape from '../public/img/t_shape.png';
+import { useMemo } from 'react';
 
 const LeftSection = tw.section`flex flex-col pr-16`;
 const RightSection = tw.section`flex flex-col gap-16`;
@@ -51,12 +55,25 @@ const ShapeModel = () => {
   ) => {
     setSelectedCard(() => type);
   };
+
+  const selectedSrc = useMemo(() => {
+    switch (selectedCard) {
+      case 'i':
+        return I;
+      case 't':
+        return T;
+      case 'pi':
+        return Pi;
+      default:
+        return Choose;
+    }
+  }, [selectedCard]);
   return (
     <MainLayout>
       <LeftSection>
         <PageTitle firstDesc="Choose your" secondDesc="Career Shape Model" />
         <ShapeModelDesc />
-        <ImageBox styles={{ minWidth: '240px' }} src={Choose} alt={'choose'} />
+        <ImageBox styles={{ minWidth: '240px' }} src={selectedSrc} alt={'choose'} />
       </LeftSection>
       <RightSection>
         <ShapeModelCard
