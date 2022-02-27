@@ -1,7 +1,7 @@
-import { IShapeModelCard } from '../interfaces/shapemodel';
 import IShape from '@/img/i_shape.png';
 import PIShape from '@/img/pi_shape.png';
 import TShape from '@/img/t_shape.png';
+import { IShapeModelCard } from '../interfaces/shapemodel';
 
 export const cardList: IShapeModelCard[] = [
   {

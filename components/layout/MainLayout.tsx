@@ -1,4 +1,3 @@
-import { ComponentPropsWithRef } from 'react';
 import tw from 'twin.macro';
 
 interface ILayoutProps {

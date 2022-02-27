@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
 import tw from 'twin.macro';
-import Btn from '../components/Btn';
 import PageTitle from '../components/atoms/IndexPage/PageTitle';
+import Btn from '../components/Btn';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
 import graphicImage from '../public/img/Graphic.png';
-import { ReactElement } from 'react';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
