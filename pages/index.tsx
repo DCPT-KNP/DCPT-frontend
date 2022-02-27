@@ -6,6 +6,7 @@ import PageTitle from '../components/atoms/IndexPage/PageTitle';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
 import graphicImage from '../public/img/Graphic.png';
+import { ReactElement } from 'react';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
@@ -16,7 +17,7 @@ const IndexPage = () => {
     router.push('/roadmap');
   };
   return (
-    <MainLayout>
+    <>
       <RightSection>
         <PageTitle firstDesc="Set your IT Design" secondDesc="Career Roadmap" />
         <IndexDesc />
@@ -36,10 +37,13 @@ const IndexPage = () => {
           />
         </BtnLayout>
       </RightSection>
-
       <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
-    </MainLayout>
+    </>
   );
+};
+
+IndexPage.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default IndexPage;

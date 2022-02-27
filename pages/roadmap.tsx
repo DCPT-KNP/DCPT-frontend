@@ -1,15 +1,16 @@
+import PageTitle from '@/components/atoms/IndexPage/PageTitle';
+import Btn from '@/components/Btn';
+import MainLayout from '@/components/layout/MainLayout';
+import LoadmapCard from '@/components/roadmap/RoadmapCard';
+import RoadmapDesc from '@/components/roadmap/RoadmapDesc';
+import Step1 from '@/img/roadmap_step1.png';
+import Step2 from '@/img/roadmap_step2.png';
+import Step3 from '@/img/roadmap_step3.png';
+import Step4 from '@/img/roadmap_step4.png';
+import { IRoadMapCard } from '@/interfaces/roadmap';
 import Router from 'next/router';
+import { ReactElement } from 'react';
 import tw from 'twin.macro';
-import Btn from '../components/Btn';
-import PageTitle from '../components/atoms/IndexPage/PageTitle';
-import MainLayout from '../components/layout/MainLayout';
-import LoadmapCard from '../components/roadmap/RoadmapCard';
-import RoadmapDesc from '../components/roadmap/RoadmapDesc';
-import { IRoadMapCard } from '../interface/roadmap';
-import Step1 from '../public/img/roadmap_step1.png';
-import Step2 from '../public/img/roadmap_step2.png';
-import Step3 from '../public/img/roadmap_step3.png';
-import Step4 from '../public/img/roadmap_step4.png';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
@@ -45,7 +46,7 @@ const Roadmap = () => {
     Router.push('/shapemodel');
   };
   return (
-    <MainLayout>
+    <>
       <RightSection>
         <PageTitle firstDesc="What is" secondDesc="Career Roadmap?" />
         <RoadmapDesc />
@@ -58,8 +59,12 @@ const Roadmap = () => {
         </BtnLayout>
       </RightSection>
       <LoadmapCard cardList={cardList} />
-    </MainLayout>
+    </>
   );
+};
+
+Roadmap.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default Roadmap;
