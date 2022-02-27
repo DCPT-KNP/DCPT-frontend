@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 import tw from 'twin.macro';
-import PageTitle from '../components/atoms/IndexPage/PageTitle';
-import LoginBtn from '../components/Buttons/LoginBtn';
-import Btn from '../components/common/Btn';
-import MainLayout from '../components/layout/MainLayout';
-import IndexDesc from '../components/molecules/IndexDesc';
-import graphicImage from '../public/img/Graphic.png';
+import PageTitle from '@/components/atoms/IndexPage/PageTitle';
+import LoginBtn from '@/components/Buttons/LoginBtn';
+import Btn from '@/components/common/Btn';
+import MainLayout from '@/components/layout/MainLayout';
+import IndexDesc from '@/components/molecules/IndexDesc';
+import graphicImage from '@/img/Graphic.png';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;

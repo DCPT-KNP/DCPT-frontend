@@ -1,5 +1,5 @@
 import PageTitle from '@/components/atoms/IndexPage/PageTitle';
-import Btn from '@/components/Btn';
+import Btn from '@/components/common/Btn';
 import ImageBox from '@/components/common/ImageBox';
 import MainLayout from '@/components/layout/MainLayout';
 import ShapeModelCard from '@/components/shapemodel/ShapeModelCard';

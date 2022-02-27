@@ -1,5 +1,5 @@
 import PageTitle from '@/components/atoms/IndexPage/PageTitle';
-import Btn from '@/components/Btn';
+import Btn from '@/components/common/Btn';
 import MainLayout from '@/components/layout/MainLayout';
 import LoadmapCard from '@/components/roadmap/RoadmapCard';
 import RoadmapDesc from '@/components/roadmap/RoadmapDesc';
