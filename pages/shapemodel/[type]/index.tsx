@@ -18,19 +18,19 @@ const HeadLine = tw(SubHeadline)``;
 
 const TypePage = (props: ReturnType<GetStaticProps> & { data: IShapeModelCard }) => {
   return (
-    <MainLayout>
+    <>
       <RightSection>
         <Title>{props?.data?.title}</Title>
       </RightSection>
       <LeftSection>
         <HeadLine></HeadLine>
       </LeftSection>
-    </MainLayout>
+    </>
   );
 };
 
 TypePage.getLayout = function getLayout(page: ReactElement) {
-  return <div>hello{page}</div>;
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
