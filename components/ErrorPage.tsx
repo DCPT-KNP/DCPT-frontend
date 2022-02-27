@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Btn from './Btn';
+import Btn from './common/Btn';
 
 interface IErrorPageProps {
   errorTitle: string;
