@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 import tw from 'twin.macro';
 import PageTitle from '../components/atoms/IndexPage/PageTitle';
-import Btn from '../components/Btn';
+import LoginBtn from '../components/Buttons/LoginBtn';
+import Btn from '../components/common/Btn';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
 import graphicImage from '../public/img/Graphic.png';
@@ -31,10 +32,7 @@ const IndexPage = () => {
             name="비회원 시작"
             onClick={handleClickGoToRoadmap}
           />
-          <Btn
-            styles={{ size: '20', bgColor: '#1A1A1A', color: '#FFFFFF' }}
-            name="로그인"
-          />
+          <LoginBtn />
         </BtnLayout>
       </RightSection>
       <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
