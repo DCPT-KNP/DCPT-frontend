@@ -1,3 +1,4 @@
+import { SubTitle1 } from '@/styles/typography';
 import {
   Modal,
   ModalOverlay,
@@ -7,7 +8,24 @@ import {
   ModalBody,
   ModalCloseButton
 } from '@chakra-ui/react';
+import tw from 'twin.macro';
 
+import { GoogleIconBtn, KakaoIconBtn, NaverIconBtn } from '../Buttons/IconBtn';
+
+const SocialLoginLayout = tw.div`
+  flex gap-12
+`;
+
+const SocialBtnBlock = tw.div`
+  flex
+  flex-col
+  gap-5
+`;
+
+const SocialBtnName = tw(SubTitle1)`
+text-center
+text-gray-400
+`;
 interface ILoginModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -18,13 +36,31 @@ const LoginModal = ({ isOpen, onClose }: ILoginModalProps) => {
     <>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>로그인</ModalHeader>
+        <ModalContent padding="12">
+          <ModalHeader
+            display="flex"
+            justifyContent="center"
+            padding="0"
+            marginBottom="14"
+          >
+            로그인
+          </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <div>구글</div>
-            <div>카카오</div>
-            <div>네이버</div>
+          <ModalBody display="flex" justifyContent="center" padding="0">
+            <SocialLoginLayout>
+              <SocialBtnBlock>
+                <GoogleIconBtn />
+                <SocialBtnName>구글</SocialBtnName>
+              </SocialBtnBlock>
+              <SocialBtnBlock>
+                <KakaoIconBtn />
+                <SocialBtnName>카카오</SocialBtnName>
+              </SocialBtnBlock>
+              <SocialBtnBlock>
+                <NaverIconBtn />
+                <SocialBtnName>네이버</SocialBtnName>
+              </SocialBtnBlock>
+            </SocialLoginLayout>
           </ModalBody>
         </ModalContent>
       </Modal>
