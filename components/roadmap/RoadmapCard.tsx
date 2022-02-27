@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import tw from 'twin.macro';
-import { IRoadMapCard } from '../../interface/roadmap';
-import Chip from '../atoms/Chip';
+import { IRoadMapCard } from '@/interfaces/roadmap';
+import Chip from '@/components/atoms/Chip';
 
 interface IRoadmapCardProps {
   cardList: IRoadMapCard[];

@@ -1,3 +1,4 @@
+import Arrow from '@/img/icons/arrow.svg';
 import { ButtonHTMLAttributes } from 'react';
 import tw, { css } from 'twin.macro';
 
@@ -13,6 +14,7 @@ interface IStylesProps {
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
+  arrow?: boolean;
   styles: IStylesProps;
 }
 
@@ -36,14 +38,16 @@ const ButtonStyles = ({
     margin: `${margin}`
   });
 
-const Btn = ({ name, disabled, styles, ...rest }: IButtonProps) => {
+const Btn = ({ name, disabled, styles, arrow = false, ...rest }: IButtonProps) => {
   return (
     <button
+      className={'flex items-center'}
       disabled={disabled}
       css={[tw`font-bold`, ButtonStyles({ disabled, ...styles })]}
       {...rest}
     >
-      {name}
+      <span>{name}</span>
+      {arrow && <Arrow className={'ml-4'} />}
     </button>
   );
 };

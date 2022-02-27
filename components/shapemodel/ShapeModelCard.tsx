@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { SyntheticEvent } from 'react';
 import tw from 'twin.macro';
-import { IShapeModelCard } from '../../interface/shapemodel';
+import { IShapeModelCard } from '@/interfaces/shapemodel';
+import { Body1, Title1 } from '@/styles/typography';
 import ImageBox from '../common/ImageBox';
 
 type SelectedCardType = {
@@ -23,8 +24,8 @@ const Card = styled.button([
   ({ selected }: SelectedCardType) => selected && tw`border-[#000000]`
 ]);
 const CardInfoBox = tw.div`flex flex-col py-2 ml-[2rem]`;
-const Title = tw.p`font-bold text-[1.4rem] mb-[0.8rem]`;
-const Desc = tw.p`font-medium text-[1.2rem] text-[#999999]`;
+const Title = tw(Title1)`font-bold text-[1.4rem] mb-[0.8rem]`;
+const Desc = tw(Body1)`font-medium text-[18px] text-[#999999]`;
 
 const ShapeModelCard = ({
   cardList,
