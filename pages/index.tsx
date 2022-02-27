@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
-import Btn from '../components/atoms/Buttons/Btn';
+import LoginBtn from '../components/Buttons/LoginBtn';
+import Btn from '../components/common/Btn';
 import IndexPageTitle from '../components/atoms/IndexPage/IndexTitle';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
@@ -29,10 +30,7 @@ const IndexPage = () => {
             name="비회원 시작"
             onClick={handleClickGoToRoadmap}
           />
-          <Btn
-            styles={{ size: '20', bgColor: '#1A1A1A', color: '#FFFFFF' }}
-            name="로그인"
-          />
+          <LoginBtn />
         </BtnLayout>
       </RightSection>
 
