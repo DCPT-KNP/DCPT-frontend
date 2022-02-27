@@ -1,21 +1,22 @@
-import Image from 'next/image';
+import PageTitle from '@/components/atoms/IndexPage/PageTitle';
+import Btn from '@/components/Btn';
+import MainLayout from '@/components/layout/MainLayout';
+import LoadmapCard from '@/components/roadmap/RoadmapCard';
+import RoadmapDesc from '@/components/roadmap/RoadmapDesc';
+import Step1 from '@/img/roadmap_step1.png';
+import Step2 from '@/img/roadmap_step2.png';
+import Step3 from '@/img/roadmap_step3.png';
+import Step4 from '@/img/roadmap_step4.png';
+import { IRoadMapCard } from '@/interfaces/roadmap';
+import Router from 'next/router';
+import { ReactElement } from 'react';
 import tw from 'twin.macro';
-import Btn from '../components/atoms/Buttons/Btn';
-import MainLayout from '../components/layout/MainLayout';
-import LoadmapCard from '../components/roadmap/RoadmapCard';
-import RoadmapDesc from '../components/molecules/RoadmapDesc';
-import Step1 from '../public/img/roadmap_step1.png';
-import Step2 from '../public/img/roadmap_step2.png';
-import Step3 from '../public/img/roadmap_step3.png';
-import Step4 from '../public/img/roadmap_step4.png';
-import { ICard } from '../interface/roadmap';
-import IndexPageTitle from '../components/atoms/IndexPage/IndexTitle';
 
-const RightSection = tw.section`flex flex-col flex-shrink-0 mr-2.5`;
+const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
 
 const Roadmap = () => {
-  const cardList: ICard[] = [
+  const cardList: IRoadMapCard[] = [
     {
       src: Step1,
       alt: 'roadmap step1',
@@ -41,21 +42,29 @@ const Roadmap = () => {
       desc: '직접 제작한 커리어 로드맵 결과를 확인 후 공유 또는 저장합니다. 로그인 시 커리어 로드맵 별 세부 역량 및 Tip을 확인할 수 있습니다.'
     }
   ];
+  const handleClickGoToShapeModel = () => {
+    Router.push('/shapemodel');
+  };
   return (
-    <MainLayout>
+    <>
       <RightSection>
-        <IndexPageTitle title="What is<br/>Career Roadmap?" />
+        <PageTitle firstDesc="What is" secondDesc="Career Roadmap?" />
         <RoadmapDesc />
         <BtnLayout>
           <Btn
             styles={{ size: '20', bgColor: '#1A1A1A', color: '#FFFFFF' }}
             name="로드맵 제작"
+            onClick={handleClickGoToShapeModel}
           />
         </BtnLayout>
       </RightSection>
       <LoadmapCard cardList={cardList} />
-    </MainLayout>
+    </>
   );
+};
+
+Roadmap.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default Roadmap;

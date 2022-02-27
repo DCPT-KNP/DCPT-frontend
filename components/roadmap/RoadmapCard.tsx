@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import tw from 'twin.macro';
-import { ICard } from '../../interface/roadmap';
-import Chip from '../atoms/Chip';
+import { IRoadMapCard } from '@/interfaces/roadmap';
+import Chip from '@/components/atoms/Chip';
 
 interface IRoadmapCardProps {
-  cardList: ICard[];
+  cardList: IRoadMapCard[];
 }
 
 const CardList = tw.div`grid grid-cols-2 grid-rows-2 gap-10 flex-grow`;

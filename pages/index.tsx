@@ -1,24 +1,26 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { ReactElement } from 'react';
 import tw from 'twin.macro';
+import PageTitle from '../components/atoms/IndexPage/PageTitle';
 import LoginBtn from '../components/Buttons/LoginBtn';
 import Btn from '../components/common/Btn';
-import IndexPageTitle from '../components/atoms/IndexPage/IndexTitle';
 import MainLayout from '../components/layout/MainLayout';
 import IndexDesc from '../components/molecules/IndexDesc';
 import graphicImage from '../public/img/Graphic.png';
 
-const RightSection = tw.section`flex flex-col flex-grow`;
-const BtnLayout = tw.div`flex items-center h-full `;
+const RightSection = tw.section`flex flex-col pr-16`;
+const BtnLayout = tw.div`flex items-end h-full`;
+
 const IndexPage = () => {
   const router = useRouter();
   const handleClickGoToRoadmap = () => {
     router.push('/roadmap');
   };
   return (
-    <MainLayout>
+    <>
       <RightSection>
-        <IndexPageTitle title="Set your IT Design <br/> Career Roadmap" />
+        <PageTitle firstDesc="Set your IT Design" secondDesc="Career Roadmap" />
         <IndexDesc />
         <BtnLayout>
           <Btn
@@ -33,10 +35,13 @@ const IndexPage = () => {
           <LoginBtn />
         </BtnLayout>
       </RightSection>
-
       <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
-    </MainLayout>
+    </>
   );
+};
+
+IndexPage.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default IndexPage;

@@ -14,7 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/interfaces/*": ["interfaces/*"],
+      "@/metadata/*": ["metadata/*"],
+      "@/pages/*": ["pages/*"],
+      "@/styles/*": ["styles/*"],
+      "@/img/*": ["public/img/*"],
+      "@/fonts/*": ["public/fonts/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
