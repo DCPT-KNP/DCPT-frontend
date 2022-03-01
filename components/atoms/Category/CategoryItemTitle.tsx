@@ -1,3 +1,4 @@
+import { Body1 } from '@/styles/typography';
 import { css } from '@emotion/react';
 import tw from 'twin.macro';
 
@@ -15,7 +16,7 @@ const Styles = ({ color, fontWeight }: IStylesProps) =>
     color: ${color};
     font-weight: ${fontWeight};
   `;
-const Title = tw.h2`font-weight[700] text-[1.2rem]`;
+const Title = tw(Body1)``;
 const CategoryItemTitle = ({ title, styles }: ICategoryMenuTitleProps) => {
   return <Title css={Styles({ ...styles })}>{title}</Title>;
 };

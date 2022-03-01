@@ -10,7 +10,6 @@ interface IStylesProps {
   border?: string;
   textAlign?: 'left' | 'center' | 'right';
   margin?: string;
-  onClick?: () => void;
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,6 +19,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const ButtonStyles = ({
+  disabled,
   size,
   bgColor = '#ffffff',
   color = '#000000',
@@ -27,9 +27,9 @@ const ButtonStyles = ({
   border = 'none',
   textAlign = 'center',
   margin = '0 0 0 0 '
-}: IStylesProps) =>
+}: IStylesProps & { disabled: boolean | undefined }) =>
   css({
-    backgroundColor: `${bgColor}`,
+    backgroundColor: disabled ? '#BDBDBD' : `${bgColor}`,
     fontSize: `${size}`,
     color: `${color}`,
     padding: `${padding}`,
@@ -40,7 +40,10 @@ const ButtonStyles = ({
 
 const Btn = ({ name, disabled, styles, arrow = false, ...rest }: IButtonProps) => {
   return (
-    <button css={[tw`flex items-center font-bold`, ButtonStyles(styles)]} {...rest}>
+    <button
+      css={[tw`flex items-center font-bold`, ButtonStyles({ disabled, ...styles })]}
+      {...rest}
+    >
       <span>{name}</span>
       {arrow && <Arrow className={'ml-4'} />}
     </button>

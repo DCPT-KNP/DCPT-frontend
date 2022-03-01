@@ -8,7 +8,7 @@ interface IStylesProps {
   padding: string;
 }
 interface IChipsProps {
-  content: number | string;
+  content?: number | string;
   styles: IStylesProps;
 }
 const Styles = ({

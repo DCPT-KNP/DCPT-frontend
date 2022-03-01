@@ -1,11 +1,16 @@
 import Logo from '@/img/icons/logo.svg';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
+import NavBar from '../common/NavBar';
 
-const Header = tw.header`sticky flex top-0 px-16 shadow-[0px 10px 30px #F0F0F0] bg-white z-10`;
-const LogoBtn = tw.button``;
+interface IHeaderLayoutProps {
+  navbar: boolean;
+}
 
-const HeaderLayout = () => {
+const Header = tw.header`sticky flex flex-col top-0 px-16 shadow-[0px 10px 30px #F0F0F0] bg-white z-10`;
+const LogoBtn = tw.button`w-max`;
+
+const HeaderLayout = ({ navbar = false }: IHeaderLayoutProps) => {
   const router = useRouter();
   const handleClickGoToHome = () => {
     router.push('/');
@@ -13,8 +18,9 @@ const HeaderLayout = () => {
   return (
     <Header>
       <LogoBtn onClick={handleClickGoToHome}>
-        <Logo src={Logo} alt={'logo'} />
+        <Logo />
       </LogoBtn>
+      {navbar && <NavBar />}
     </Header>
   );
 };
