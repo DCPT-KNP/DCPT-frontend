@@ -1,5 +1,5 @@
 import tw from 'twin.macro';
-import Chip from '../atoms/Chip';
+import Chip from '../common/Chip';
 import StatusTitle from '../atoms/StatusTitle';
 
 interface IStatusProps {

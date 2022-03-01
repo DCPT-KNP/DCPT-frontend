@@ -1,7 +1,7 @@
 import tw from 'twin.macro';
 import CommonTitle from '../atoms/CommonTitle';
 import Avatar from '../atoms/Avatar';
-import Chip from '../atoms/Chip';
+import Chip from '../common/Chip';
 
 const Card = tw.div`flex gap-[2rem]`;
 const Box = tw.div`flex flex-col gap-[1.4rem] w-[40%]`;

@@ -1,8 +1,8 @@
 import { ButtonHTMLAttributes, SyntheticEvent, useMemo } from 'react';
 import tw from 'twin.macro';
-import CategoryItemTitle from '../atoms/Category/CategoryItemTitle';
-import CategoryItemUnderline from '../atoms/Category/CategoryItemUnderline';
-import Chip from '../atoms/Chip';
+import CategoryItemTitle from './CategoryItemTitle';
+import CategoryItemUnderline from './CategoryItemUnderline';
+import Chip from '../common/Chip';
 
 interface ICategoryMenuProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;

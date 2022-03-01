@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
 import tw from 'twin.macro';
 import CommonTitle from '../components/atoms/CommonTitle';
-import CategoryItem from '../components/molecules/CategoryItem';
+import CategoryItem from '../components/Category/CategoryItem';
 import MissionCard from '../components/molecules/MissionCard';
 import MyInfoCard from '../components/molecules/MyInfoCard';
 import SkillCard from '../components/molecules/SkillCard';

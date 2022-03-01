@@ -1,15 +1,13 @@
 import { SubTitle1 } from '@/styles/typography';
 import {
   Modal,
-  ModalOverlay,
+  ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton
+  ModalOverlay
 } from '@chakra-ui/react';
 import tw from 'twin.macro';
-
 import { GoogleIconBtn, KakaoIconBtn, NaverIconBtn } from '../Buttons/IconBtn';
 
 const SocialLoginLayout = tw.div`
