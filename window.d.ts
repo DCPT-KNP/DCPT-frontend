@@ -1,5 +1,5 @@
-declare global {
-  interface Window {
-    Kakao: unknown;
-  }
+interface Window {
+  Kakao: any;
 }
+
+declare const window: Window;

@@ -27,11 +27,10 @@ const IconBtn = ({ imageUrl, name, onClick }: IIconBtnProps) => {
 };
 
 export const KakaoIconBtn = () => {
-  const { Kakao }: any = window;
+  const { Kakao } = window;
   const kakaoLogin = async () => {
     try {
       console.log('hi');
-      //   const result = await axios.get(`${BASE_URL}/api/auth/kakao`);
       Kakao.Auth.authorize({
         redirectUri: 'http://localhost:3000'
       });

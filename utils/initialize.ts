@@ -1,13 +1,10 @@
 import { key } from 'constants/config';
 
-if (typeof window !== 'undefined') {
-  const { Kakao } = window;
-}
 // ...code
 
 export default function initialize() {
   if (typeof window !== 'undefined') {
-    // ...code
+    const { Kakao } = window;
     Kakao.init(key.kakao);
   }
 }

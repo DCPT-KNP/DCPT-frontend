@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  env: {
-    clientId: 'efb2040825bd2bb9de28e4d9520be606',
-    redirectUrl: 'http://localhost:3000',
-    javascriptKakaoKey: '754e84ae19a3bd59463c6848efd2e58b'
-  },
   async rewrites() {
     if (process.env.NODE_ENV !== 'production') {
       return [
