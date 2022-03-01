@@ -9,6 +9,7 @@ import I from '@/img/i.png';
 import Pi from '@/img/pi.png';
 import T from '@/img/t.png';
 import { IShapeModelCard } from '@/interfaces/shapemodel';
+import { navList } from '@/metadata/nav';
 import { cardList } from '@/metadata/shape-model';
 import { useRouter } from 'next/router';
 import { ReactElement, SyntheticEvent, useMemo, useState } from 'react';
@@ -32,7 +33,7 @@ const ShapeModel = () => {
   const router = useRouter();
 
   const handleClickNext = () => {
-    selectedCard && router.push(`${router.pathname}/${selectedCard}`);
+    selectedCard && router.push(`${router.pathname}/${selectedCard}/${navList[1].key}`);
   };
 
   const selectedSrc = useMemo(() => {
