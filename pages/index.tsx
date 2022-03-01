@@ -8,12 +8,17 @@ import Btn from '@/components/common/Btn';
 import MainLayout from '@/components/layout/MainLayout';
 import IndexDesc from '@/components/molecules/IndexDesc';
 import graphicImage from '@/img/Graphic.png';
+import { useLayoutEffect } from 'react';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
 
 const IndexPage = () => {
   const router = useRouter();
+  useLayoutEffect(() => {
+    console.log(router.query);
+  }, [router.query]);
+
   const handleClickGoToRoadmap = () => {
     router.push('/roadmap');
   };
