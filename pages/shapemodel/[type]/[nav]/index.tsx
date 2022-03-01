@@ -1,4 +1,5 @@
 import MainLayout from '@/components/layout/MainLayout';
+import SelectionMap from '@/components/SelectionMap';
 import { IShapeModelCard } from '@/interfaces/shapemodel';
 import { navList, NavListMetaDataType } from '@/metadata/nav';
 import { cardList } from '@/metadata/shape-model';
@@ -14,7 +15,6 @@ import tw from 'twin.macro';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const Title = tw(Title1)`font-bold text-[#666666] mb-12`;
-const SelectBox = tw.div`border border-[#E9E9E9]`;
 const LeftSection = tw.section`flex`;
 const HeadLine = tw(SubHeadline)``;
 
@@ -25,7 +25,7 @@ const TypePage = (
     <>
       <RightSection>
         <Title>{props?.data?.title}</Title>
-        <SelectBox></SelectBox>
+        <SelectionMap />
       </RightSection>
       <LeftSection>
         <HeadLine>Choose {props?.data?.navTitle}</HeadLine>

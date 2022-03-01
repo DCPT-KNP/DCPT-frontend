@@ -64,7 +64,7 @@ export default class MyDocument extends Document<MyDocumentProps> {
             as="font"
             crossOrigin=""
           />
-          <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+          <script src="https://developers.kakao.com/sdk/js/kakao.js" async></script>
         </Head>
         <body>
           <Main />
