@@ -1,17 +1,13 @@
+import Chip from '@/components/common/Chip';
+import { cardList } from '@/metadata/roadmap-card';
 import Image from 'next/image';
 import tw from 'twin.macro';
-import { IRoadMapCard } from '@/interfaces/roadmap';
-import Chip from '@/components/atoms/Chip';
-
-interface IRoadmapCardProps {
-  cardList: IRoadMapCard[];
-}
 
 const CardList = tw.div`grid grid-cols-2 grid-rows-2 gap-10 flex-grow`;
 const Card = tw.div`grid`;
 const CardInfoBox = tw.div`flex mt-5 h-10`;
 const CardDesc = tw.p`text-[#999999] ml-[1rem] text-[0.8rem] self-center`;
-const RoadmapCard = ({ cardList }: IRoadmapCardProps) => {
+const RoadmapCard = () => {
   return (
     <CardList>
       {cardList?.map(({ src, alt, title, desc }) => (

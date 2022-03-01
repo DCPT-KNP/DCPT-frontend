@@ -1,8 +1,9 @@
+import { IShapeModelCard } from '@/interfaces/shapemodel';
 import { navList } from '@/metadata/nav';
 import { useRouter } from 'next/router';
 import { SyntheticEvent } from 'react';
 import tw from 'twin.macro';
-import CategoryItem from '../molecules/CategoryItem';
+import CategoryItem from '../Category/CategoryItem';
 
 const Nav = tw.nav`flex justify-center`;
 const Ul = tw.ul`flex gap-10`;
@@ -25,15 +26,18 @@ const NavBar = () => {
   return (
     <Nav>
       <Ul>
-        {navList.map(({ key, navTitle }) => (
-          <Li key={key}>
-            <CategoryItem
-              title={navTitle}
-              selected={query?.nav === key}
-              onClick={(e) => handleClickItem(e, key)}
-            />
-          </Li>
-        ))}
+        {navList.map(
+          ({ key, navTitle, containTypes }) =>
+            containTypes.includes(query?.type as IShapeModelCard['type']) && (
+              <Li key={key}>
+                <CategoryItem
+                  title={navTitle}
+                  selected={query?.nav === key}
+                  onClick={(e) => handleClickItem(e, key)}
+                />
+              </Li>
+            )
+        )}
       </Ul>
     </Nav>
   );
