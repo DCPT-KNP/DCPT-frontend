@@ -32,7 +32,7 @@ export const KakaoIconBtn = () => {
     try {
       console.log('hi');
       Kakao.Auth.authorize({
-        redirectUri: 'http://localhost:3000'
+        redirectUri: 'http://localhost:3000/auth/kakao/callback'
       });
     } catch (error) {
       console.log('error', error);
