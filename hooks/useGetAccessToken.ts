@@ -53,8 +53,7 @@ export default function useGetAccessToken<T>(url: Key, fetcher: Fetcher) {
     shouldRetryOnError: false,
     revalidateOnReconnect: false,
     revalidateOnFocus: false,
-    revalidateIfStale: false,
-    revalidateOnMount: false
+    revalidateIfStale: false
   });
   return response as SWRResponse<T, any>;
 }
