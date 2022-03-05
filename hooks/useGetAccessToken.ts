@@ -49,6 +49,12 @@ export interface Config<Data = unknown, Error = unknown>
 export const fetcher = (url: any, code: any) => requests.get(url, { code });
 
 export default function useGetAccessToken<T>(url: Key, fetcher: Fetcher) {
-  const response = useSWR(url, fetcher);
+  const response = useSWR(url, fetcher, {
+    shouldRetryOnError: false,
+    revalidateOnReconnect: false,
+    revalidateOnFocus: false,
+    revalidateIfStale: false,
+    revalidateOnMount: false
+  });
   return response as SWRResponse<T, any>;
 }
