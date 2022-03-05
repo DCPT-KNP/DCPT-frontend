@@ -2,24 +2,44 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import useGetAccessToken, { fetcher } from 'hooks/useGetAccessToken';
+import { getStorageItem, setStorageItem } from 'hooks/useLocalStorage';
+import useSWR from 'swr';
 
-const Ex = () => {
+const LoginLoadingPage = () => {
   const [queryCode, setCode] = useState('');
   const router = useRouter();
+
   useEffect(() => {
     const code = router?.query?.code as string;
     setCode(code);
   }, [router?.query?.code]);
 
-  console.log(queryCode);
-  const { data } = useGetAccessToken(
+  // useEffect(() => {
+  //   router.prefetch('/');
+  // }, [router]);
+
+  if (queryCode) {
+    console.log('dd?');
+  }
+  const { data } = useGetAccessToken<any>(
     queryCode ? ['/auth/kakao', queryCode] : null,
     fetcher
   );
+
   if (data) {
-    console.log(data, 'data');
+    setStorageItem('accessToken', data.response.accessToken);
   }
-  return <div>오하요</div>;
+
+  const { data: userData } = useSWR(
+    getStorageItem('accessToken') ? '/user' : null,
+    fetcher
+  );
+
+  if (userData) {
+    router.push('/');
+  }
+
+  return <div>...loading</div>;
 };
 
-export default Ex;
+export default LoginLoadingPage;
