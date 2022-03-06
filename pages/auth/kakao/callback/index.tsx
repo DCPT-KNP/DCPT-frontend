@@ -14,9 +14,9 @@ const LoginLoadingPage = () => {
     setCode(code);
   }, [router?.query?.code]);
 
-  // useEffect(() => {
-  //   router.prefetch('/');
-  // }, [router]);
+  useEffect(() => {
+    router.prefetch('/');
+  }, [router]);
 
   if (queryCode) {
     console.log('dd?');
