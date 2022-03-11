@@ -33,7 +33,7 @@ const AppContext = createContext<Context>({
   store: {
     isLoggedIn: false
   },
-  dispatch: undefined
+  dispatch: () => undefined
 });
 
 const AppProvider = ({ children, initialStore }: ProviderProps) => {

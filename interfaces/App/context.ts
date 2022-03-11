@@ -3,8 +3,8 @@ import { Action } from './action';
 import { Store } from './store';
 
 export interface Context {
-  store?: Store;
-  dispatch?: React.Dispatch<Action>;
+  store: Store;
+  dispatch: React.Dispatch<Action>;
 }
 
 export interface ProviderProps {
