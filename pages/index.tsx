@@ -9,12 +9,17 @@ import MainLayout from '@/components/layout/MainLayout';
 import IndexDesc from '@/components/molecules/IndexDesc';
 import graphicImage from '@/img/Graphic.png';
 import { useLayoutEffect } from 'react';
+import useAppContext from 'contexts/App/indext';
+import { useMediaQuery } from '@chakra-ui/react';
 
 const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
 
 const IndexPage = () => {
   const router = useRouter();
+  const { store } = useAppContext();
+  const [isDeskTop] = useMediaQuery('(min-width: 1024px)');
+
   useLayoutEffect(() => {
     console.log(router.query);
   }, [router.query]);
@@ -40,7 +45,9 @@ const IndexPage = () => {
           <LoginBtn />
         </BtnLayout>
       </RightSection>
-      <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
+      {isDeskTop && (
+        <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
+      )}
     </>
   );
 };
