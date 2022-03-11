@@ -35,10 +35,12 @@ const LoginLoadingPage = () => {
     fetcher
   );
 
-  if (userData) {
-    console.log('aa', store?.isLoggedIn, dispatch?.prototype);
-    router.push('/');
-  }
+  useEffect(() => {
+    if (userData) {
+      dispatch(actions.login());
+      router.push('/');
+    }
+  }, [userData, dispatch, router]);
 
   return <div>...loading</div>;
 };

@@ -1,4 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { AppContext, AppProvider } from 'contexts/App/indext';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
@@ -19,7 +20,17 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     initialize();
   }, []);
   const getLayout = Component.getLayout || ((page) => page);
-  return <ChakraProvider>{getLayout(<Component {...pageProps} />)}</ChakraProvider>;
+  return (
+    <ChakraProvider>
+      <AppProvider
+        initialStore={{
+          isLoggedIn: false
+        }}
+      >
+        {getLayout(<Component {...pageProps} />)}
+      </AppProvider>
+    </ChakraProvider>
+  );
 }
 
 export default MyApp;
