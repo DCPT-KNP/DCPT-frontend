@@ -3,6 +3,12 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      caret: {
+        i: '1/4/3'
+      },
+      content: {
+        link: "url('/img/model_choose.png')"
+      },
       colors: {
         gray: {
           100: '#FFFFFF',

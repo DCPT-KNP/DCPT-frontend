@@ -1,8 +1,9 @@
 import MainLayout from '@/components/layout/MainLayout';
-import SelectionMap from '@/components/SelectionMap';
+import SelectionMap from '@/components/SelectionMap/SelectionMap';
 import { IShapeModelCard } from '@/interfaces/shapemodel';
 import { navList, NavListMetaDataType } from '@/metadata/nav';
 import { cardList } from '@/metadata/shape-model';
+import { chooseSkillsMetaData, ChooseSkillType } from '@/metadata/choose-skills';
 import { SubHeadline, Title1 } from '@/styles/typography';
 import {
   GetStaticPaths,
@@ -10,26 +11,42 @@ import {
   GetStaticProps,
   GetStaticPropsContext
 } from 'next';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import tw from 'twin.macro';
+import ChooseSkillCard from '@/components/ChooseSkillCard/ChooseSkillCard';
 
-const RightSection = tw.section`flex flex-col pr-16`;
+const LeftSection = tw.section`flex flex-col pr-16 border-r py-[104px]`;
 const Title = tw(Title1)`font-bold text-[#666666] mb-12`;
-const LeftSection = tw.section`flex`;
-const HeadLine = tw(SubHeadline)``;
+const RightSection = tw.section`flex flex-col pl-16 py-[104px]`;
+const HeadLine = tw(SubHeadline)`font-bold whitespace-nowrap mb-8`;
+const SkillsBox = tw.div`flex flex-wrap gap-4`;
 
 const TypePage = (
   props: ReturnType<GetStaticProps> & { data: IShapeModelCard & NavListMetaDataType }
 ) => {
+  const [selectedMaps, setSelectedMaps] = useState();
   return (
     <>
-      <RightSection>
+      <LeftSection>
         <Title>{props?.data?.title}</Title>
         <SelectionMap />
-      </RightSection>
-      <LeftSection>
-        <HeadLine>Choose {props?.data?.navTitle}</HeadLine>
       </LeftSection>
+      <RightSection>
+        <HeadLine>Choose {props?.data?.navTitle}</HeadLine>
+        <SkillsBox>
+          {chooseSkillsMetaData?.map(
+            ({ key, title, content, color }: ChooseSkillType) => (
+              <ChooseSkillCard
+                key={key}
+                title={title}
+                content={content}
+                color={color}
+                onClick={() => console.log(title)}
+              />
+            )
+          )}
+        </SkillsBox>
+      </RightSection>
     </>
   );
 };
