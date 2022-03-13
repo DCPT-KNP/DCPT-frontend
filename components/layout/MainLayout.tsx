@@ -8,7 +8,7 @@ interface ILayoutProps {
   children: React.ReactNode;
 }
 
-const Layout = tw.div`flex px-16 py-32 max-h-screen`;
+const Layout = tw.div`flex px-16 h-screen`;
 
 const MainLayout = ({ children }: ILayoutProps) => {
   const { query } = useRouter();

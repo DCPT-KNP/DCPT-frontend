@@ -1,9 +1,11 @@
 import Image, { ImageProps } from 'next/image';
+import { CSSProperties } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 interface IStylesProps {
   minWidth?: string;
   maxWidth?: string;
+  height?: CSSProperties['height'];
 }
 
 interface IImageBoxProps extends ImageProps {
@@ -13,7 +15,7 @@ interface IImageBoxProps extends ImageProps {
 
 const Box = styled.div([
   tw`flex justify-center`,
-  ({ minWidth, maxWidth }: IStylesProps) => css({ minWidth, maxWidth })
+  ({ minWidth, maxWidth, height }: IStylesProps) => css({ minWidth, maxWidth, height })
 ]);
 
 const ImageBox = ({ styles, alt, ...rest }: IImageBoxProps) => {
