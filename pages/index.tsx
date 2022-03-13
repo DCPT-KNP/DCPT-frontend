@@ -1,19 +1,19 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { ReactElement } from 'react';
-import tw from 'twin.macro';
 import PageTitle from '@/components/atoms/IndexPage/PageTitle';
 import LoginBtn from '@/components/Buttons/LoginBtn';
 import Btn from '@/components/common/Btn';
 import MainLayout from '@/components/layout/MainLayout';
 import IndexDesc from '@/components/molecules/IndexDesc';
 import graphicImage from '@/img/Graphic.png';
-import { useLayoutEffect } from 'react';
-import useAppContext from 'contexts/App/indext';
 import { useMediaQuery } from '@chakra-ui/react';
+import useAppContext from 'contexts/App/index';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { ReactElement, useLayoutEffect } from 'react';
+import tw from 'twin.macro';
 
-const RightSection = tw.section`flex flex-col pr-16`;
+const RightSection = tw.section`flex flex-col pr-16 py-[104px]`;
 const BtnLayout = tw.div`flex items-end h-full`;
+const LeftSection = tw.section`flex py-[104px]`;
 
 const IndexPage = () => {
   const router = useRouter();
@@ -45,9 +45,11 @@ const IndexPage = () => {
           <LoginBtn />
         </BtnLayout>
       </RightSection>
-      {isDeskTop && (
-        <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
-      )}
+      <LeftSection>
+        {isDeskTop && (
+          <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
+        )}
+      </LeftSection>
     </>
   );
 };

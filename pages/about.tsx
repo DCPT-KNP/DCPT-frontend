@@ -106,9 +106,9 @@ const AboutPage: NextPage = () => {
       }
     }));
   };
-  const DnDContainer = tw.div`inline-flex`;
+  const DnDContainer = tw.div`inline-flex overflow-auto`;
   const DropContainer = tw.div`inline-flex flex-col gap-2`;
-  const DragContainer = tw.div`inline-block`;
+  const DragContainer = tw.div`inline-block w-max`;
   return (
     <div>
       {windowReady && (

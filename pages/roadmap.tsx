@@ -7,7 +7,8 @@ import Router from 'next/router';
 import { ReactElement } from 'react';
 import tw from 'twin.macro';
 
-const RightSection = tw.section`flex flex-col pr-16`;
+const LeftSection = tw.section`flex flex-col pr-16 py-[104px]`;
+const RightSection = tw.section`flex py-[104px]`;
 const BtnLayout = tw.div`flex items-end h-full`;
 
 const Roadmap = () => {
@@ -16,7 +17,7 @@ const Roadmap = () => {
   };
   return (
     <>
-      <RightSection>
+      <LeftSection>
         <PageTitle firstDesc="What is" secondDesc="Career Roadmap?" />
         <RoadmapDesc />
         <BtnLayout>
@@ -26,8 +27,10 @@ const Roadmap = () => {
             onClick={handleClickGoToShapeModel}
           />
         </BtnLayout>
+      </LeftSection>
+      <RightSection>
+        <LoadmapCard />
       </RightSection>
-      <LoadmapCard />
     </>
   );
 };

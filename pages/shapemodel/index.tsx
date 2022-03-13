@@ -15,8 +15,8 @@ import { useRouter } from 'next/router';
 import { ReactElement, SyntheticEvent, useMemo, useState } from 'react';
 import tw from 'twin.macro';
 
-const LeftSection = tw.section`flex flex-col pr-16`;
-const RightSection = tw.section`flex flex-col gap-16`;
+const LeftSection = tw.section`flex flex-col pr-16 py-[104px]`;
+const RightSection = tw.section`flex flex-col gap-16 py-[104px]`;
 const BtnLayout = tw.div`w-min place-self-end`;
 
 const ShapeModel = () => {
