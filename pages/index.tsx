@@ -28,7 +28,7 @@ const IndexPage = () => {
     router.push('/roadmap');
   };
   return (
-    <>
+    <div css={tw`flex justify-between w-full`}>
       <RightSection>
         <PageTitle firstDesc="Set your IT Design" secondDesc="Career Roadmap" />
         <IndexDesc />
@@ -50,7 +50,7 @@ const IndexPage = () => {
           <Image src={graphicImage} alt="graphic image" width="920px" height="760px" />
         )}
       </LeftSection>
-    </>
+    </div>
   );
 };
 
