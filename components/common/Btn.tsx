@@ -13,8 +13,8 @@ interface IStylesProps {
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  name: string;
-  arrow?: boolean;
+  name?: string;
+  arrow?: 'left' | 'right';
   styles: IStylesProps;
 }
 
@@ -27,7 +27,7 @@ const ButtonStyles = ({
   border = 'none',
   textAlign = 'center',
   margin = '0 0 0 0 '
-}: IStylesProps & { disabled: boolean | undefined }) =>
+}: IButtonProps['styles'] & { disabled: IButtonProps['disabled'] }) =>
   css({
     backgroundColor: disabled ? '#BDBDBD' : `${bgColor}`,
     fontSize: `${size}`,
@@ -35,17 +35,24 @@ const ButtonStyles = ({
     padding: `${padding}`,
     border: `${border}`,
     textAlign: `${textAlign}`,
-    margin: `${margin}`
+    margin: `${margin}`,
+    width: 'fit-content'
   });
 
-const Btn = ({ name, disabled, styles, arrow = false, ...rest }: IButtonProps) => {
+const Btn = ({ name, disabled, styles, arrow, ...rest }: IButtonProps) => {
   return (
     <button
+      disabled={disabled}
       css={[tw`flex items-center font-bold`, ButtonStyles({ disabled, ...styles })]}
       {...rest}
     >
+      {arrow === 'left' && (
+        <Arrow css={[css({ fill: styles.color })]} className={'mr-4 rotate-180'} />
+      )}
       <span>{name}</span>
-      {arrow && <Arrow className={'ml-4'} />}
+      {arrow === 'right' && (
+        <Arrow css={[css({ fill: styles.color })]} className={'ml-4'} />
+      )}
     </button>
   );
 };

@@ -21,7 +21,6 @@ const NavBar = () => {
     if (nav === 'shape_model') {
       return push(`${notTypePathname}`);
     }
-    push(`${notTypePathname}/${query?.type}/${nav}`);
   };
   return (
     <Nav>
@@ -33,6 +32,7 @@ const NavBar = () => {
                 <CategoryItem
                   title={navTitle}
                   selected={query?.nav === key}
+                  cursor={key === 'shape_model'}
                   onClick={(e) => handleClickItem(e, key)}
                 />
               </Li>
