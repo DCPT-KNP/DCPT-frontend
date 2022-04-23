@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import useAppContext, { actions } from 'contexts/App';
 import useGetAccessToken, { fetcher } from 'hooks/useGetAccessToken';
 import { getStorageItem, setStorageItem } from 'hooks/useLocalStorage';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import useSWR from 'swr';
-import useAppContext, { actions } from 'contexts/App/indext';
-import { Action, Context } from '@/interfaces/App';
 
 const LoginLoadingPage = () => {
   const [queryCode, setCode] = useState('');
