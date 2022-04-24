@@ -12,7 +12,7 @@ import { IShapeModelCard } from '@/interfaces/shapemodel';
 import { navList } from '@/metadata/nav';
 import { cardList } from '@/metadata/shape-model';
 import { useRouter } from 'next/router';
-import { ReactElement, SyntheticEvent, useMemo, useState } from 'react';
+import { ReactElement, SyntheticEvent, useEffect, useMemo, useState } from 'react';
 import tw from 'twin.macro';
 
 const LeftSection = tw.section`flex flex-col pr-16 py-[104px]`;
@@ -48,6 +48,9 @@ const ShapeModel = () => {
         return Choose;
     }
   }, [selectedCard]);
+  useEffect(() => {
+    sessionStorage.removeItem('selectedMaps');
+  }, []);
   return (
     <>
       <LeftSection>
@@ -65,7 +68,7 @@ const ShapeModel = () => {
           <Btn
             onClick={handleClickNext}
             disabled={!selectedCard}
-            arrow={true}
+            arrow={'right'}
             styles={{ size: '20', bgColor: '#1A1A1A', color: '#FFFFFF' }}
             name="Next"
           />
