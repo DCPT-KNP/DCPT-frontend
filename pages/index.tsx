@@ -16,6 +16,7 @@ const RightSection = tw.section`flex flex-col pr-16`;
 const BtnLayout = tw.div`flex items-end h-full`;
 
 const IndexPage = () => {
+  console.log('hi')
   const router = useRouter();
   const { store } = useAppContext();
   const [isDeskTop] = useMediaQuery('(min-width: 1024px)');
